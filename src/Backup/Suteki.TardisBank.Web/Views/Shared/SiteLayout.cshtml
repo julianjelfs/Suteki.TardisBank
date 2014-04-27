@@ -8,6 +8,7 @@
     <title>Tardis Bank</title>
     <link href="@Url.Content("~/Content/reset.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/Content/text.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/960.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/Content/menu_style.css")" rel="stylesheet" type="text/css" />
 
@@ -31,28 +32,44 @@
 
 </head>
 <body>
-    <div class="container header" id="header">
-        <div>
+    <div class="container_12" id="header">
+        <div class="grid_2">&nbsp;
+        </div>
+        <div class="grid_6">
+            <br />
             <h1>Tardis Bank</h1>
             <p>Pocket money on-line banking for kids and parents</p>
         </div>
-        <div class="login-status" id="login_status">@Html.Action("Index", "User")</div>
-        <div></div>
+        <div class="grid_4" id="login_status">@Html.Action("Index", "User")</div>
+        <div class="clear"></div>
     </div>
+    <div class="clear"></div>
     
-    <div class="container menuContainer">
+    <div class="container_12 menuContainer">
         @Html.Action("Index", "Menu") 
     </div>
+    <div class="clear"></div>
 
-    <div class="container" id="content">
-        @RenderBody()
+    <div class="container_12" id="content">
+        
+        <br />
+        <!-- start of content -->
+
+@RenderBody()
+        
+        <!-- end of content -->
+        <div class="clear"></div>
+        <br />
     </div>
+    <div class="clear"></div>
 
-    <div class="container footer" id="footer">
-        <div>
+    <div class="container_12" id="footer">
+        <div class="grid_12">
             @Html.ActionLink("Legal", "Legal", "Home") | <a href="http://www.apache.org/licenses/LICENSE-2.0.html">Copyright &copy; Apache 2</a> | <a href="http://github.com/mikehadlow/Suteki.TardisBank">Open Source</a> 
         </div>
+        <div class="clear"></div>
     </div>
+    <div class="clear"></div>
     <div id="fb-root"></div>
 
     <script type="text/javascript">
